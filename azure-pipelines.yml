@@ -1,3 +1,5 @@
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/anaconda?view=azure-devops&tabs=ubuntu-16-04
+
 trigger:
 - master
 - dev/*
@@ -15,67 +17,60 @@ jobs:
         python.version: '3.6'
 
   steps:
-  - bash: echo "##vso[task.prependpath]$CONDA/bin"
+  - bash: |
+      cat /etc/os-release
+      echo "whoami: " `whoami`     
+      echo "which docker: " $(which docker)      
+      echo "which conda: " $(which conda)      
+      echo "CONDA: " $CONDA
+      echo "docker: " $(docker --version)      
+      echo "conda: " $(conda --version)      
+      
+    displayName: Show system info
+
+  - bash: |
+      echo "PATH: $PATH"
+      echo "PYTHONPATH: $PYTHONPATH"
+      echo "##vso[task.prependpath]$CONDA/bin"
+      echo "PATH: $PATH"
+      echo "PYTHONPATH: $PYTHONPATH"
     displayName: Add conda to PATH
 
   - bash: conda create --yes --quiet --name my_env
     displayName: Create Anaconda environment
 
   - bash: |
+      conda env list
+      echo "source activate my_env"
       source activate my_env
+      conda env list
       conda install --yes --quiet --name my_env python=$PYTHON_VERSION numpy
     displayName: Install Anaconda packages
 
   - bash: |
+      conda env list
+      echo "source activate my_env"
       source activate my_env
+      conda env list
       pip install pytest pytest-azurepipelines
       pytest
     displayName: pytest
 
 
-- job:
-  displayName: vs2017-win2016
-  pool:
-    vmImage: 'vs2017-win2016'
-  strategy:
-    matrix:
-      #Python27:
-      #  python.version: '2.7'
-      Python36:
-        python.version: '3.6'
-
-  steps:
-  - powershell: Write-Host "##vso[task.prependpath]$env:CONDA\Scripts"
-    displayName: Add conda to PATH
-
-  - script: conda create --yes --quiet --name my_env
-    displayName: Create Anaconda environment
-
-  - script: |
-      call activate my_env
-      conda install --yes --quiet --name my_env python=%PYTHON_VERSION% numpy
-    displayName: Install Anaconda packages
-
-  - script: |
-      call activate my_env
-      pip install pytest pytest-azurepipelines
-      pytest
-    displayName: pytest
-
-- job:
-  displayName: From environment.yml
-  pool:
-    vmImage: 'ubuntu-16.04'
-
-  steps:
-  - bash: echo "##vso[task.prependpath]$CONDA/bin"
-    displayName: Add conda to PATH
-
-  - script: conda env create --quiet --file environment.yml
-    displayName: Create Anaconda environment
-
-  - bash: |
-      source activate env-from-yaml
-      pip install pytest pytest-azurepipelines
-      pytest
-    displayName: pytest
+# - job:
+#   displayName: From environment.yml
+#   pool:
+#     vmImage: 'ubuntu-16.04'
+# 
+#   steps:
+#   - bash: echo "##vso[task.prependpath]$CONDA/bin"
+#     displayName: Add conda to PATH
+# 
+#   - script: conda env create --quiet --file environment.yml
+#     displayName: Create Anaconda environment
+# 
+#   - bash: |
+#       source activate env-from-yaml
+#       pip install pytest pytest-azurepipelines
+#       pytest
+#     displayName: pytest
