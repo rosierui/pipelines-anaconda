@@ -1,3 +1,7 @@
+trigger:
+- master
+- dev/*
+
 jobs:
 - job:
   displayName: ubuntu-16.04
@@ -5,8 +9,8 @@ jobs:
     vmImage: 'ubuntu-16.04'
   strategy:
     matrix:
-      Python27:
-        python.version: '2.7'
+      #Python27:
+      #  python.version: '2.7'
       Python36:
         python.version: '3.6'
 
@@ -14,48 +18,20 @@ jobs:
   - bash: echo "##vso[task.prependpath]$CONDA/bin"
     displayName: Add conda to PATH
 
-  - bash: conda create --yes --quiet --name myEnvironment
+  - bash: conda create --yes --quiet --name my_env
     displayName: Create Anaconda environment
 
   - bash: |
-      source activate myEnvironment
-      conda install --yes --quiet --name myEnvironment python=$PYTHON_VERSION numpy
+      source activate my_env
+      conda install --yes --quiet --name my_env python=$PYTHON_VERSION numpy
     displayName: Install Anaconda packages
 
   - bash: |
-      source activate myEnvironment
+      source activate my_env
       pip install pytest pytest-azurepipelines
       pytest
     displayName: pytest
 
-- job:
-  displayName: macOS-10.13
-  pool:
-    vmImage: 'macOS-10.13'
-  strategy:
-    matrix:
-      Python27:
-        python.version: '2.7'
-      Python36:
-        python.version: '3.6'
-
-  steps:
-  - bash: echo "##vso[task.prependpath]$CONDA/bin"
-    displayName: Add conda to PATH
-
-  - bash: conda create --yes --quiet --name myEnvironment
-    displayName: Create Anaconda environment
-
-  - bash: |
-      source activate myEnvironment
-      conda install --yes --quiet --name myEnvironment python=$PYTHON_VERSION numpy
-      pip install pytest pytest-azurepipelines
-    displayName: Install Anaconda packages
-
-  - bash: |
-      source activate myEnvironment
-      pytest
-    displayName: pytest
 
 - job:
   displayName: vs2017-win2016
@@ -63,8 +39,8 @@ jobs:
     vmImage: 'vs2017-win2016'
   strategy:
     matrix:
-      Python27:
-        python.version: '2.7'
+      #Python27:
+      #  python.version: '2.7'
       Python36:
         python.version: '3.6'
 
@@ -72,16 +48,16 @@ jobs:
   - powershell: Write-Host "##vso[task.prependpath]$env:CONDA\Scripts"
     displayName: Add conda to PATH
 
-  - script: conda create --yes --quiet --name myEnvironment
+  - script: conda create --yes --quiet --name my_env
     displayName: Create Anaconda environment
 
   - script: |
-      call activate myEnvironment
-      conda install --yes --quiet --name myEnvironment python=%PYTHON_VERSION% numpy
+      call activate my_env
+      conda install --yes --quiet --name my_env python=%PYTHON_VERSION% numpy
     displayName: Install Anaconda packages
 
   - script: |
-      call activate myEnvironment
+      call activate my_env
       pip install pytest pytest-azurepipelines
       pytest
     displayName: pytest
