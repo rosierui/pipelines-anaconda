@@ -23,11 +23,15 @@ jobs:
       echo "which docker: " $(which docker)      
       echo "which conda: " $(which conda)      
       echo "which apt: " $(which apt)      
+      echo "which rust: " $(which rust)      
+      echo "which snap: " $(which snap)      
       echo "apt --version: " $(apt --version)      
-      echo "CONDA: " $CONDA
+      echo "snap --version: " $(snap --version)      
       echo "docker: " $(docker --version)      
       echo "conda: " $(conda --version)      
+      echo "CONDA: " $CONDA
       echo "HOME: " $HOME
+      echo "PATH: " $PATH
       echo "ls -al ~"
       ls -al ~
 
@@ -44,16 +48,26 @@ jobs:
       echo "ls -al"     
       ls -al
 
+      echo "ls -al /usr/share/rust/.cargo/bin"
+      ls -al /usr/share/rust/.cargo/bin
+
+      echo "ls -al /snap/bin"
+      ls -al /snap/bin
+
       docker images
       
     displayName: Show system info
 
   - bash: |
       # https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml
-      # echo "Agent.BuildDirectory: " ${Agent.BuildDirectory} # ${Agent.BuildDirectory}: bad substitution
-      # echo "Build.ArtifactStagingDirectory: " ${Build.ArtifactStagingDirectory}
-      echo "place holder"
-    displayName: Display predefined variable
+      # echo "Agent.BuildDirectory: " ${Agent.BuildDirectory} # bad substitution
+      # echo "Build.ArtifactStagingDirectory: " ${Build.ArtifactStagingDirectory} # bad substitution
+      echo "cat ~/.bashrc"
+      cat ~/.bashrc
+
+      echo "cat ~/.profile"
+      cat ~/.profile
+    displayName: Display .bashrc .profile
 
   # https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml
   # https://mohitgoyal.co/2019/06/23/print-all-environment-variables-in-azure-devops-across-microsoft-hosted-agents/
@@ -94,6 +108,16 @@ jobs:
       pytest
     displayName: pytest
 
+  - bash: |
+      # https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml
+      # echo "Agent.BuildDirectory: " ${Agent.BuildDirectory} # bad substitution
+      # echo "Build.ArtifactStagingDirectory: " ${Build.ArtifactStagingDirectory} # bad substitution
+      echo "cat ~/.bashrc"
+      cat ~/.bashrc
+
+      echo "cat ~/.profile"
+      cat ~/.profile
+    displayName: Display .bashrc .profile again
 
 # - job:
 #   displayName: From environment.yml
