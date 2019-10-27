@@ -18,15 +18,70 @@ jobs:
 
   steps:
   - bash: |
-      cat /etc/os-release
+      echo "cat /etc/os-release: " $(cat /etc/os-release | grep "VERSION=")
       echo "whoami: " `whoami`     
       echo "which docker: " $(which docker)      
       echo "which conda: " $(which conda)      
       echo "CONDA: " $CONDA
+      echo "PWD: " $PWD
       echo "docker: " $(docker --version)      
       echo "conda: " $(conda --version)      
+      echo "ls -al"     
+      ls -al     
       
     displayName: Show system info
+
+  - bash: |
+      # https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml
+      echo "Agent.BuildDirectory: " $Agent.BuildDirectory
+      echo "Agent.HomeDirectory: " $Agent.HomeDirectory
+      echo "Agent.Id: " $Agent.Id
+      echo "Agent.JobName: " $Agent.JobName
+      echo "Agent.JobStatus: " $Agent.JobStatus
+      echo "Agent.MachineName: " $Agent.MachineName
+      echo "Agent.Name: " $Agent.Name
+      echo "Agent.OS: " $Agent.OS
+      
+      echo "Agent.OSArchitecture: " $Agent.OSArchitecture
+      echo "Agent.TempDirectory: " $Agent.TempDirectory
+      echo "Agent.ToolsDirectory: " $Agent.ToolsDirectory
+      echo "Agent.WorkFolder: " $Agent.WorkFolder
+      
+    displayName: Display Agent variable
+
+  - bash: |
+      echo "Build.ArtifactStagingDirectory: " $Build.ArtifactStagingDirectory
+      echo "Build.BuildId: " $Build.BuildId
+      echo "Build.BuildNumber: " $Build.BuildNumber
+      echo "Build.BuildUri: " $Build.BuildUri
+      echo "Build.BinariesDirectory: " $Build.BinariesDirectory
+      echo "Build.DefinitionName: " $Build.DefinitionName
+      echo "Build.DefinitionVersion: " $Build.DefinitionVersion
+      echo "Build.QueuedBy: " $Build.QueuedBy
+      echo "Build.QueuedById: " $Build.QueuedById
+      echo "Build.Reason: " $Build.Reason
+      echo "Build.Repository.Clean: " $Build.Repository.Clean
+      echo "Build.Repository.LocalPath: " $Build.Repository.LocalPath
+      echo "Build.Repository.ID: " $Build.Repository.ID
+      echo "Build.Repository.Name: " $Build.Repository.Name
+      echo "Build.Repository.Provider: " $Build.Repository.Provider
+      echo "Build.Repository.Tfvc.Workspace: " $Build.Repository.Tfvc.Workspace
+      echo "Build.Repository.Uri: " $Build.Repository.Uri
+      echo "Build.RequestedFor: " $Build.RequestedFor
+      echo "Build.RequestedForEmail: " $Build.RequestedForEmail
+      echo "Build.RequestedForId: " $Build.RequestedForId
+      echo "Build.SourceBranch: " $Build.SourceBranch
+      echo "Build.SourceBranchName: " $Build.SourceBranchName
+
+    displayName: Display Build variables
+
+  # https://mohitgoyal.co/2019/06/23/print-all-environment-variables-in-azure-devops-across-microsoft-hosted-agents/
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: 'env | sort'
+    
+    displayName: env | sort
 
   - bash: |
       echo "PATH: $PATH"
