@@ -1,0 +1,44 @@
+##[section]Starting: Show system info
+
+==============================================================================
+Task         : Bash
+Description  : Run a Bash script on macOS, Linux, or Windows
+Version      : 3.159.3
+Author       : Microsoft Corporation
+Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+==============================================================================
+
+Generating script.
+
+========================== Starting Command Output ===========================
+
+[command]/bin/bash --noprofile --norc /home/vsts/work/_temp/ede51537-389a-48d1-bdca-4bf092bddcb0.sh
+
+cat /etc/os-release:  VERSION="16.04.6 LTS (Xenial Xerus)"
+
+whoami:  vsts
+which docker:  /usr/bin/docker
+which conda:  /usr/bin/conda
+CONDA:  /usr/share/miniconda
+PWD:  /home/vsts/work/1/s
+docker:  Docker version 3.0.6, build a63faebc
+conda:  conda 4.7.10
+
+ls -al
+total 72
+drwxr-xr-x 5 vsts docker  4096 Oct 27 05:14 .
+drwxr-xr-x 6 vsts docker  4096 Oct 27 05:14 ..
+-rw-r--r-- 1 vsts docker  4348 Oct 27 05:14 azure-pipelines.yml
+-rw-r--r-- 1 vsts docker   102 Oct 27 05:14 environment.yml
+drwxr-xr-x 8 vsts docker  4096 Oct 27 05:14 .git
+-rw-r--r-- 1 vsts docker    20 Oct 27 05:14 .gitignore
+-rw-r--r-- 1 vsts docker 18653 Oct 27 05:14 LICENSE
+-rw-r--r-- 1 vsts docker  1090 Oct 27 05:14 LICENSE-CODE
+-rw-r--r-- 1 vsts docker   371 Oct 27 05:14 .project
+-rw-r--r-- 1 vsts docker   423 Oct 27 05:14 .pydevproject
+-rw-r--r-- 1 vsts docker  2052 Oct 27 05:14 README.md
+drwxr-xr-x 2 vsts docker  4096 Oct 27 05:14 src
+drwxr-xr-x 2 vsts docker  4096 Oct 27 05:14 test
+
+
+##[section]Finishing: Show system info

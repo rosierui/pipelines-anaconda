@@ -1,0 +1,176 @@
+##[section]Starting: env | sort
+
+==============================================================================
+Task         : Bash
+Description  : Run a Bash script on macOS, Linux, or Windows
+Version      : 3.159.3
+Author       : Microsoft Corporation
+Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+==============================================================================
+Generating script.
+Script contents:
+env | sort
+========================== Starting Command Output ===========================
+[command]/bin/bash --noprofile --norc /home/vsts/work/_temp/ca017320-c424-4bef-8ac2-610b7617d656.sh
+AGENT_ACCEPTTEEEULA=True
+AGENT_BUILDDIRECTORY=/home/vsts/work/1
+AGENT_DISABLELOGPLUGIN_TESTFILEPUBLISHERPLUGIN=true
+AGENT_DISABLELOGPLUGIN_TESTRESULTLOGPLUGIN=true
+AGENT_HOMEDIRECTORY=/home/vsts/agents/2.159.2
+AGENT_ID=8
+AGENT_JOBNAME=ubuntu-16.04 Python36
+agent.jobstatus=Succeeded
+AGENT_JOBSTATUS=Succeeded
+AGENT_MACHINENAME=fv-az619
+AGENT_NAME=Hosted Agent
+AGENT_OSARCHITECTURE=X64
+AGENT_OS=Linux
+AGENT_RETAINDEFAULTENCODING=false
+AGENT_ROOTDIRECTORY=/home/vsts/work
+AGENT_TEMPDIRECTORY=/home/vsts/work/_temp
+AGENT_TOOLSDIRECTORY=/opt/hostedtoolcache
+AGENT_VERSION=2.159.2
+AGENT_WORKFOLDER=/home/vsts/work
+
+ANDROID_HOME=/usr/local/lib/android/sdk
+ANDROID_SDK_ROOT=/usr/local/lib/android/sdk
+
+ANT_HOME=/usr/share/ant
+
+AZURE_HTTP_USER_AGENT=VSTS_063fc549-6266-4470-bb4e-a1ff093452fd_build_3_0
+
+BOOST_ROOT_1_69_0=/usr/local/share/boost/1.69.0
+BOOST_ROOT=/usr/local/share/boost/1.69.0
+
+BUILD_ARTIFACTSTAGINGDIRECTORY=/home/vsts/work/1/a
+BUILD_BINARIESDIRECTORY=/home/vsts/work/1/b
+BUILD_BUILDID=19
+BUILD_BUILDNUMBER=20191027.1
+BUILD_BUILDURI=vstfs:///Build/Build/19
+BUILD_CONTAINERID=2754540
+BUILD_DEFINITIONNAME=rosierui.pipelines-anaconda
+BUILD_DEFINITIONVERSION=1
+BUILD_QUEUEDBY=GitHub
+BUILD_QUEUEDBYID=f8f1e474-7bf0-4f63-8307-a74f1d6a804b
+BUILD_REASON=IndividualCI
+BUILD_REPOSITORY_CLEAN=False
+BUILD_REPOSITORY_GIT_SUBMODULECHECKOUT=False
+BUILD_REPOSITORY_ID=rosierui/pipelines-anaconda
+BUILD_REPOSITORY_LOCALPATH=/home/vsts/work/1/s
+BUILD_REPOSITORY_NAME=rosierui/pipelines-anaconda
+BUILD_REPOSITORY_PROVIDER=GitHub
+BUILD_REPOSITORY_URI=https://github.com/rosierui/pipelines-anaconda
+BUILD_REQUESTEDFOREMAIL=
+BUILD_REQUESTEDFOR=GitHub
+BUILD_REQUESTEDFORID=f8f1e474-7bf0-4f63-8307-a74f1d6a804b
+BUILD_SOURCEBRANCHNAME=master
+BUILD_SOURCEBRANCH=refs/heads/master
+BUILD_SOURCESDIRECTORY=/home/vsts/work/1/s
+BUILD_SOURCEVERSIONAUTHOR=moonwave
+BUILD_SOURCEVERSION=e9a2f5b694f089030cf339dfc9eb11e58bcba484
+BUILD_SOURCEVERSIONMESSAGE=print env variables
+BUILD_STAGINGDIRECTORY=/home/vsts/work/1/a
+
+CHROME_BIN=/usr/bin/google-chrome
+COMMON_TESTRESULTSDIRECTORY=/home/vsts/work/1/TestResults
+CONDA=/usr/share/miniconda
+
+DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
+ENDPOINT_URL_SYSTEMVSSCONNECTION=https://dev.azure.com/jonathanluo/
+GIT_TERMINAL_PROMPT=0
+
+GOROOT_1_10_X64=/usr/local/go1.10
+GOROOT_1_11_X64=/usr/local/go1.11
+GOROOT_1_12_X64=/usr/local/go1.12
+GOROOT_1_13_X64=/usr/local/go1.13
+GOROOT_1_9_X64=/usr/local/go1.9
+GOROOT=/usr/local/go1.12
+
+GRADLE_HOME=/usr/share/gradle
+
+HOME=/home/vsts
+
+ImageVersion=20190930.2
+INPUT_ARGUMENTS=
+
+JAVA_HOME_11_X64=/usr/lib/jvm/zulu-11-azure-amd64
+JAVA_HOME_12_X64=/usr/lib/jvm/zulu-12-azure-amd64
+JAVA_HOME_7_X64=/usr/lib/jvm/zulu-7-azure-amd64
+JAVA_HOME_8_X64=/usr/lib/jvm/zulu-8-azure-amd64
+JAVA_HOME=/usr/lib/jvm/zulu-8-azure-amd64
+
+LANG=en_US.UTF-8
+LEIN_HOME=/usr/local/lib/lein
+LEIN_JAR=/usr/local/lib/lein/self-installs/leiningen-2.9.1-standalone.jar
+
+M2_HOME=/usr/share/apache-maven-3.6.1
+
+MSDEPLOY_HTTP_USER_AGENT=VSTS_063fc549-6266-4470-bb4e-a1ff093452fd_build_3_0
+
+PATH=/usr/share/rust/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+
+PIPELINE_WORKSPACE=/home/vsts/work/1
+
+PWD=/home/vsts/work/1/s
+
+PYTHON_VERSION=3.6
+
+RUNNER_TOOLSDIRECTORY=/opt/hostedtoolcache
+
+SHLVL=1
+
+SYSTEM_ARTIFACTSDIRECTORY=/home/vsts/work/1/a
+SYSTEM=build
+SYSTEM_COLLECTIONID=063fc549-6266-4470-bb4e-a1ff093452fd
+SYSTEM_COLLECTIONURI=https://dev.azure.com/jonathanluo/
+SYSTEM_CULTURE=en-US
+SYSTEM_DEFAULTWORKINGDIRECTORY=/home/vsts/work/1/s
+SYSTEM_DEFINITIONID=3
+SYSTEM_DEFINITIONNAME=rosierui.pipelines-anaconda
+SYSTEM_ENABLEACCESSTOKEN=SecretVariable
+SYSTEM_HOSTTYPE=build
+SYSTEM_ISSCHEDULED=False
+SYSTEM_JOBATTEMPT=1
+SYSTEM_JOBDISPLAYNAME=ubuntu-16.04 Python36
+SYSTEM_JOBID=12d8cea8-d8c9-5ebb-2f5b-15e1c1d554cd
+SYSTEM_JOBIDENTIFIER=Job1.Python36
+SYSTEM_JOBNAME=Python36
+SYSTEM_JOBPARALLELISMTAG=Private
+SYSTEM_JOBPOSITIONINPHASE=1
+SYSTEM_PARALLELEXECUTIONTYPE=MultiConfiguration
+SYSTEM_PHASEATTEMPT=1
+SYSTEM_PHASEDISPLAYNAME=ubuntu-16.04
+SYSTEM_PHASEID=d768f2aa-2c4b-5810-be30-11cbf757b796
+SYSTEM_PHASENAME=Job1
+SYSTEM_PIPELINESTARTTIME=2019-10-27 05:13:53+00:00
+SYSTEM_PLANID=45c7e3b1-b82f-4437-8a71-fe93003b1879
+SYSTEM_PULLREQUEST_ISFORK=False
+SYSTEM_SERVERTYPE=Hosted
+SYSTEM_STAGEATTEMPT=1
+SYSTEM_STAGEDISPLAYNAME=__default
+SYSTEM_STAGEID=96ac2280-8cb4-5df5-99de-dd2da759617d
+SYSTEM_STAGENAME=__default
+SYSTEM_TASKDEFINITIONSURI=https://dev.azure.com/jonathanluo/
+SYSTEM_TASKDISPLAYNAME=env | sort
+SYSTEM_TASKINSTANCEID=54c71631-7f8d-569c-f133-2b855c7c771e
+SYSTEM_TASKINSTANCENAME=Bash4
+SYSTEM_TEAMFOUNDATIONCOLLECTIONURI=https://dev.azure.com/jonathanluo/
+SYSTEM_TEAMFOUNDATIONSERVERURI=https://dev.azure.com/jonathanluo/
+SYSTEM_TEAMPROJECT=anaconda
+SYSTEM_TEAMPROJECTID=f2907ef1-6e20-4c1d-aa68-8d6bd98564e5
+SYSTEM_TIMELINEID=45c7e3b1-b82f-4437-8a71-fe93003b1879
+SYSTEM_TOTALJOBSINPHASE=1
+SYSTEM_WORKFOLDER=/home/vsts/work
+
+TASK_DISPLAYNAME=env | sort
+
+TF_BUILD=True
+
+USER=vsts
+
+_=/usr/bin/env
+
+VCPKG_INSTALLATION_ROOT=/usr/local/share/vcpkg
+
+VSTS_AGENT_PERFLOG=/home/vsts/perflog
+VSTS_PROCESS_LOOKUP_ID=vsts_fc917782-143b-4db6-bc54-a1637656af64
