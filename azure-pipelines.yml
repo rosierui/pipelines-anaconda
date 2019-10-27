@@ -28,16 +28,17 @@ jobs:
       echo "docker: " $(docker --version)      
       echo "conda: " $(conda --version)      
       echo "HOME: " $HOME
+      echo "ls -al ~"
       ls -al ~
 
       echo "ls -al ~/work:"
       ls -al ~/work
 
-      echo "ls -al ~/work/l:"
-      ls -al ~/work/l
+      echo "ls -al ~/work/1:"
+      ls -al ~/work/1
 
-      echo "ls -al ~/work/l/s:"
-      ls -al ~/work/l/s
+      echo "ls -al ~/work/1/s:"
+      ls -al ~/work/1/s
 
       echo "PWD: " $PWD
       echo "ls -al"     
@@ -49,48 +50,12 @@ jobs:
 
   - bash: |
       # https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml
-      echo "Agent.BuildDirectory: " ${Agent.BuildDirectory}
-      echo "Agent.HomeDirectory: " ${Agent.HomeDirectory}
-      echo "Agent.Id: " ${Agent.Id}
-      echo "Agent.JobName: " ${Agent.JobName}
-      echo "Agent.JobStatus: " ${Agent.JobStatus}
-      echo "Agent.MachineName: " ${Agent.MachineName}
-      echo "Agent.Name: " ${Agent.Name}
-      echo "Agent.OS: " ${Agent.OS}
-      
-      echo "Agent.OSArchitecture: " ${Agent.OSArchitecture}
-      echo "Agent.TempDirectory: " ${Agent.TempDirectory}
-      echo "Agent.ToolsDirectory: " ${Agent.ToolsDirectory}
-      echo "Agent.WorkFolder: " ${Agent.WorkFolder}
-      
-    displayName: Display Agent variable
+      # echo "Agent.BuildDirectory: " ${Agent.BuildDirectory} # ${Agent.BuildDirectory}: bad substitution
+      # echo "Build.ArtifactStagingDirectory: " ${Build.ArtifactStagingDirectory}
+      echo "place holder"
+    displayName: Display predefined variable
 
-  - bash: |
-      echo "Build.ArtifactStagingDirectory: " ${Build.ArtifactStagingDirectory}
-      echo "Build.BuildId: " ${Build.BuildId}
-      echo "Build.BuildNumber: " ${Build.BuildNumber}
-      echo "Build.BuildUri: " ${Build.BuildUri}
-      echo "Build.BinariesDirectory: " ${Build.BinariesDirectory}
-      echo "Build.DefinitionName: " ${Build.DefinitionName}
-      echo "Build.DefinitionVersion: " ${Build.DefinitionVersion}
-      echo "Build.QueuedBy: " ${Build.QueuedBy}
-      echo "Build.QueuedById: " ${Build.QueuedById}
-      echo "Build.Reason: " ${Build.Reason}
-      echo "Build.Repository.Clean: " ${Build.Repository.Clean}
-      echo "Build.Repository.LocalPath: " ${Build.Repository.LocalPath}
-      echo "Build.Repository.ID: " ${Build.Repository.ID}
-      echo "Build.Repository.Name: " ${Build.Repository.Name}
-      echo "Build.Repository.Provider: " ${Build.Repository.Provider}
-      echo "Build.Repository.Tfvc.Workspace: " ${Build.Repository.Tfvc.Workspace}
-      echo "Build.Repository.Uri: " ${Build.Repository.Uri}
-      echo "Build.RequestedFor: " ${Build.RequestedFor}
-      echo "Build.RequestedForEmail: " ${Build.RequestedForEmail}
-      echo "Build.RequestedForId: " ${Build.RequestedForId}
-      echo "Build.SourceBranch: " ${Build.SourceBranch}
-      echo "Build.SourceBranchName: " ${Build.SourceBranchName}
-
-    displayName: Display Build variables
-
+  # https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml
   # https://mohitgoyal.co/2019/06/23/print-all-environment-variables-in-azure-devops-across-microsoft-hosted-agents/
   - task: Bash@3
     inputs:
