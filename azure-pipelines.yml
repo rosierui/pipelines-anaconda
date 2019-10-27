@@ -126,6 +126,13 @@ jobs:
 
       echo "cat ~/.profile"
       cat ~/.profile
+      
+      echo "dummy data" > $COMMON_TESTRESULTSDIRECTORY/my_test_data.txt
+      echo "ls -al $COMMON_TESTRESULTSDIRECTORY"
+      ls -al $COMMON_TESTRESULTSDIRECTORY
+      
+      echo 'cat $COMMON_TESTRESULTSDIRECTORY/my_test_data.txt'
+      cat $COMMON_TESTRESULTSDIRECTORY/my_test_data.txt
     displayName: Display .bashrc .profile again
 
 # - job:
