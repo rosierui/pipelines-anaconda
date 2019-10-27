@@ -20,15 +20,21 @@ jobs:
   - bash: |
       echo "cat /etc/os-release: " $(cat /etc/os-release | grep "VERSION=")
       echo "whoami: " `whoami`     
-      echo "which docker: " $(which docker)      
-      echo "which conda: " $(which conda)      
       echo "which apt: " $(which apt)      
-      echo "which rust: " $(which rust)      
+      echo "which cargo: " $(which cargo)      
+      echo "which conda: " $(which conda)      
+      echo "which docker: " $(which docker)      
+      echo "which rustc: " $(which rustc)      
       echo "which snap: " $(which snap)      
+      echo "which tree: " $(which tree)      
+
       echo "apt --version: " $(apt --version)      
-      echo "snap --version: " $(snap --version)      
-      echo "docker: " $(docker --version)      
+      echo "cargo --version: " $(cargo --version)      
       echo "conda: " $(conda --version)      
+      echo "docker: " $(docker --version)      
+      echo "rustc: " $(rustc --version)      
+      echo "snap --version: " $(snap --version)      
+
       echo "CONDA: " $CONDA
       echo "HOME: " $HOME
       echo "PATH: " $PATH
@@ -48,11 +54,14 @@ jobs:
       echo "ls -al"     
       ls -al
 
+      echo "ls -al /usr/share/rust/"
+      ls -al /usr/share/rust/
+
       echo "ls -al /usr/share/rust/.cargo/bin"
       ls -al /usr/share/rust/.cargo/bin
 
-      echo "ls -al /snap/bin"
-      ls -al /snap/bin
+      #echo "ls -al /snap/bin"
+      #ls -al /snap/bin # ls: cannot access '/snap/bin': No such file or directory
 
       docker images
       
