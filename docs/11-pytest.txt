@@ -1,67 +1,67 @@
-2019-10-27T07:19:37.5561961Z ##[section]Starting: pytest
-2019-10-27T07:19:37.5564833Z ==============================================================================
-2019-10-27T07:19:37.5564946Z Task         : Bash
-2019-10-27T07:19:37.5564997Z Description  : Run a Bash script on macOS, Linux, or Windows
-2019-10-27T07:19:37.5565101Z Version      : 3.159.3
-2019-10-27T07:19:37.5565148Z Author       : Microsoft Corporation
-2019-10-27T07:19:37.5565237Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
-2019-10-27T07:19:37.5565478Z ==============================================================================
-2019-10-27T07:19:37.6968784Z Generating script.
-2019-10-27T07:19:37.7006614Z ========================== Starting Command Output ===========================
-2019-10-27T07:19:37.7048155Z [command]/bin/bash --noprofile --norc /home/vsts/work/_temp/093d980a-a4c3-4c60-bba4-dfdd9d083a0a.sh
-2019-10-27T07:19:38.1833035Z # conda environments:
-2019-10-27T07:19:38.1833408Z #
-2019-10-27T07:19:38.1833483Z base                  *  /usr/share/miniconda
-2019-10-27T07:19:38.1833795Z my_env                   /usr/share/miniconda/envs/my_env
-2019-10-27T07:19:38.1833841Z 
-2019-10-27T07:19:38.2265154Z source activate my_env
-2019-10-27T07:19:38.7898932Z # conda environments:
-2019-10-27T07:19:38.7900388Z #
-2019-10-27T07:19:38.7900606Z base                     /usr/share/miniconda
-2019-10-27T07:19:38.7900881Z my_env                *  /usr/share/miniconda/envs/my_env
-2019-10-27T07:19:38.7901236Z 
-2019-10-27T07:19:48.4985466Z Collecting pytest
-2019-10-27T07:19:48.5652511Z   Downloading https://files.pythonhosted.org/packages/93/16/f6dec5178f5f4141e80dfc4812a9aba88f5f29ca881f174ab1851181d016/pytest-5.2.2-py3-none-any.whl (227kB)
-2019-10-27T07:19:48.7231292Z Collecting pytest-azurepipelines
-2019-10-27T07:19:48.7353475Z   Downloading https://files.pythonhosted.org/packages/33/6c/ed9e46adb9c76296351d27fda52d5664b883cda8a281292657a9a7345d88/pytest_azurepipelines-0.8.0-py3-none-any.whl
-2019-10-27T07:19:48.8025267Z Collecting attrs>=17.4.0
-2019-10-27T07:19:48.8139611Z   Downloading https://files.pythonhosted.org/packages/a2/db/4313ab3be961f7a763066401fb77f7748373b6094076ae2bda2806988af6/attrs-19.3.0-py2.py3-none-any.whl
-2019-10-27T07:19:48.9136708Z Collecting atomicwrites>=1.0
-2019-10-27T07:19:48.9255270Z   Downloading https://files.pythonhosted.org/packages/52/90/6155aa926f43f2b2a22b01be7241be3bfd1ceaf7d0b3267213e8127d41f4/atomicwrites-1.3.0-py2.py3-none-any.whl
-2019-10-27T07:19:48.9957291Z Collecting packaging
-2019-10-27T07:19:49.0068785Z   Downloading https://files.pythonhosted.org/packages/cf/94/9672c2d4b126e74c4496c6b3c58a8b51d6419267be9e70660ba23374c875/packaging-19.2-py2.py3-none-any.whl
-2019-10-27T07:19:49.0699447Z Collecting wcwidth
-2019-10-27T07:19:49.0810173Z   Downloading https://files.pythonhosted.org/packages/7e/9f/526a6947247599b084ee5232e4f9190a38f398d7300d866af3ab571a5bfe/wcwidth-0.1.7-py2.py3-none-any.whl
-2019-10-27T07:19:49.1534894Z Collecting pluggy<1.0,>=0.12
-2019-10-27T07:19:49.1648630Z   Downloading https://files.pythonhosted.org/packages/92/c7/48439f7d5fd6bddb4c04b850bb862b42e3e2b98570040dfaf68aedd8114b/pluggy-0.13.0-py2.py3-none-any.whl
-2019-10-27T07:19:49.2387658Z Collecting more-itertools>=4.0.0
-2019-10-27T07:19:49.2500745Z   Downloading https://files.pythonhosted.org/packages/45/dc/3241eef99eb45f1def35cf93af35d1cf9ef4c0991792583b8f33ea41b092/more_itertools-7.2.0-py3-none-any.whl (57kB)
-2019-10-27T07:19:49.3378086Z Collecting py>=1.5.0
-2019-10-27T07:19:49.3495006Z   Downloading https://files.pythonhosted.org/packages/76/bc/394ad449851729244a97857ee14d7cba61ddb268dce3db538ba2f2ba1f0f/py-1.8.0-py2.py3-none-any.whl (83kB)
-2019-10-27T07:19:49.4404149Z Collecting importlib-metadata>=0.12; python_version < "3.8"
-2019-10-27T07:19:49.4519114Z   Downloading https://files.pythonhosted.org/packages/f6/d2/40b3fa882147719744e6aa50ac39cf7a22a913cbcba86a0371176c425a3b/importlib_metadata-0.23-py2.py3-none-any.whl
-2019-10-27T07:19:49.4896084Z Requirement already satisfied: six in /usr/share/miniconda/envs/my_env/lib/python3.6/site-packages (from packaging->pytest) (1.12.0)
-2019-10-27T07:19:49.5766452Z Collecting pyparsing>=2.0.2
-2019-10-27T07:19:49.5882925Z   Downloading https://files.pythonhosted.org/packages/11/fa/0160cd525c62d7abd076a070ff02b2b94de589f1a9789774f17d7c54058e/pyparsing-2.4.2-py2.py3-none-any.whl (65kB)
-2019-10-27T07:19:49.6581852Z Collecting zipp>=0.5
-2019-10-27T07:19:49.6695281Z   Downloading https://files.pythonhosted.org/packages/74/3d/1ee25a26411ba0401b43c6376d2316a71addcc72ef8690b101b4ea56d76a/zipp-0.6.0-py2.py3-none-any.whl
-2019-10-27T07:19:49.7809796Z Installing collected packages: attrs, atomicwrites, pyparsing, packaging, wcwidth, more-itertools, zipp, importlib-metadata, pluggy, py, pytest, pytest-azurepipelines
-2019-10-27T07:19:50.2025682Z Successfully installed atomicwrites-1.3.0 attrs-19.3.0 importlib-metadata-0.23 more-itertools-7.2.0 packaging-19.2 pluggy-0.13.0 py-1.8.0 pyparsing-2.4.2 pytest-5.2.2 pytest-azurepipelines-0.8.0 wcwidth-0.1.7 zipp-0.6.0
-2019-10-27T07:19:50.7088420Z ============================= test session starts ==============================
-2019-10-27T07:19:50.7090483Z platform linux -- Python 3.6.9, pytest-5.2.2, py-1.8.0, pluggy-0.13.0
-2019-10-27T07:19:50.7101245Z rootdir: /home/vsts/work/1/s
-2019-10-27T07:19:50.7101791Z plugins: azurepipelines-0.8.0
-2019-10-27T07:19:50.8567874Z collected 1 item
-2019-10-27T07:19:50.8578328Z 
-2019-10-27T07:19:51.8409329Z Skipping uploading of coverage data.
-2019-10-27T07:19:51.8409444Z 
-2019-10-27T07:19:51.8409486Z 
-2019-10-27T07:19:51.8410474Z ----------- generated xml file: /home/vsts/work/1/s/test-output.xml ------------
-2019-10-27T07:19:51.8410559Z ============================== 1 passed in 0.16s ===============================
-2019-10-27T07:19:51.8410631Z 
-2019-10-27T07:19:51.8451650Z ##[section]Async Command Start: Publish test results
-2019-10-27T07:19:52.0595361Z Publishing test results to test run '78'
-2019-10-27T07:19:52.0595576Z Test results remaining: 1. Test run id: 78
-2019-10-27T07:19:52.4602572Z Published Test Run : https://tfsprodcus4.visualstudio.com/A063fc549-6266-4470-bb4e-a1ff093452fd/anaconda/_TestManagement/Runs?runId=78&_a=runCharts
-2019-10-27T07:19:52.5051531Z ##[section]Async Command End: Publish test results
-2019-10-27T07:19:52.5052778Z ##[section]Finishing: pytest
+19:37.5561961Z ##[section]Starting: pytest
+19:37.5564833Z ==============================================================================
+19:37.5564946Z Task         : Bash
+19:37.5564997Z Description  : Run a Bash script on macOS, Linux, or Windows
+19:37.5565101Z Version      : 3.159.3
+19:37.5565148Z Author       : Microsoft Corporation
+19:37.5565237Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+19:37.5565478Z ==============================================================================
+19:37.6968784Z Generating script.
+19:37.7006614Z ========================== Starting Command Output ===========================
+19:37.7048155Z [command]/bin/bash --noprofile --norc /home/vsts/work/_temp/093d980a-a4c3-4c60-bba4-dfdd9d083a0a.sh
+19:38.1833035Z # conda environments:
+19:38.1833408Z #
+19:38.1833483Z base                  *  /usr/share/miniconda
+19:38.1833795Z my_env                   /usr/share/miniconda/envs/my_env
+19:38.1833841Z 
+19:38.2265154Z source activate my_env
+19:38.7898932Z # conda environments:
+19:38.7900388Z #
+19:38.7900606Z base                     /usr/share/miniconda
+19:38.7900881Z my_env                *  /usr/share/miniconda/envs/my_env
+19:38.7901236Z 
+19:48.4985466Z Collecting pytest
+19:48.5652511Z   Downloading https://files.pythonhosted.org/packages/93/16/f6dec5178f5f4141e80dfc4812a9aba88f5f29ca881f174ab1851181d016/pytest-5.2.2-py3-none-any.whl (227kB)
+19:48.7231292Z Collecting pytest-azurepipelines
+19:48.7353475Z   Downloading https://files.pythonhosted.org/packages/33/6c/ed9e46adb9c76296351d27fda52d5664b883cda8a281292657a9a7345d88/pytest_azurepipelines-0.8.0-py3-none-any.whl
+19:48.8025267Z Collecting attrs>=17.4.0
+19:48.8139611Z   Downloading https://files.pythonhosted.org/packages/a2/db/4313ab3be961f7a763066401fb77f7748373b6094076ae2bda2806988af6/attrs-19.3.0-py2.py3-none-any.whl
+19:48.9136708Z Collecting atomicwrites>=1.0
+19:48.9255270Z   Downloading https://files.pythonhosted.org/packages/52/90/6155aa926f43f2b2a22b01be7241be3bfd1ceaf7d0b3267213e8127d41f4/atomicwrites-1.3.0-py2.py3-none-any.whl
+19:48.9957291Z Collecting packaging
+19:49.0068785Z   Downloading https://files.pythonhosted.org/packages/cf/94/9672c2d4b126e74c4496c6b3c58a8b51d6419267be9e70660ba23374c875/packaging-19.2-py2.py3-none-any.whl
+19:49.0699447Z Collecting wcwidth
+19:49.0810173Z   Downloading https://files.pythonhosted.org/packages/7e/9f/526a6947247599b084ee5232e4f9190a38f398d7300d866af3ab571a5bfe/wcwidth-0.1.7-py2.py3-none-any.whl
+19:49.1534894Z Collecting pluggy<1.0,>=0.12
+19:49.1648630Z   Downloading https://files.pythonhosted.org/packages/92/c7/48439f7d5fd6bddb4c04b850bb862b42e3e2b98570040dfaf68aedd8114b/pluggy-0.13.0-py2.py3-none-any.whl
+19:49.2387658Z Collecting more-itertools>=4.0.0
+19:49.2500745Z   Downloading https://files.pythonhosted.org/packages/45/dc/3241eef99eb45f1def35cf93af35d1cf9ef4c0991792583b8f33ea41b092/more_itertools-7.2.0-py3-none-any.whl (57kB)
+19:49.3378086Z Collecting py>=1.5.0
+19:49.3495006Z   Downloading https://files.pythonhosted.org/packages/76/bc/394ad449851729244a97857ee14d7cba61ddb268dce3db538ba2f2ba1f0f/py-1.8.0-py2.py3-none-any.whl (83kB)
+19:49.4404149Z Collecting importlib-metadata>=0.12; python_version < "3.8"
+19:49.4519114Z   Downloading https://files.pythonhosted.org/packages/f6/d2/40b3fa882147719744e6aa50ac39cf7a22a913cbcba86a0371176c425a3b/importlib_metadata-0.23-py2.py3-none-any.whl
+19:49.4896084Z Requirement already satisfied: six in /usr/share/miniconda/envs/my_env/lib/python3.6/site-packages (from packaging->pytest) (1.12.0)
+19:49.5766452Z Collecting pyparsing>=2.0.2
+19:49.5882925Z   Downloading https://files.pythonhosted.org/packages/11/fa/0160cd525c62d7abd076a070ff02b2b94de589f1a9789774f17d7c54058e/pyparsing-2.4.2-py2.py3-none-any.whl (65kB)
+19:49.6581852Z Collecting zipp>=0.5
+19:49.6695281Z   Downloading https://files.pythonhosted.org/packages/74/3d/1ee25a26411ba0401b43c6376d2316a71addcc72ef8690b101b4ea56d76a/zipp-0.6.0-py2.py3-none-any.whl
+19:49.7809796Z Installing collected packages: attrs, atomicwrites, pyparsing, packaging, wcwidth, more-itertools, zipp, importlib-metadata, pluggy, py, pytest, pytest-azurepipelines
+19:50.2025682Z Successfully installed atomicwrites-1.3.0 attrs-19.3.0 importlib-metadata-0.23 more-itertools-7.2.0 packaging-19.2 pluggy-0.13.0 py-1.8.0 pyparsing-2.4.2 pytest-5.2.2 pytest-azurepipelines-0.8.0 wcwidth-0.1.7 zipp-0.6.0
+19:50.7088420Z ============================= test session starts ==============================
+19:50.7090483Z platform linux -- Python 3.6.9, pytest-5.2.2, py-1.8.0, pluggy-0.13.0
+19:50.7101245Z rootdir: /home/vsts/work/1/s
+19:50.7101791Z plugins: azurepipelines-0.8.0
+19:50.8567874Z collected 1 item
+19:50.8578328Z 
+19:51.8409329Z Skipping uploading of coverage data.
+19:51.8409444Z 
+19:51.8409486Z 
+19:51.8410474Z ----------- generated xml file: /home/vsts/work/1/s/test-output.xml ------------
+19:51.8410559Z ============================== 1 passed in 0.16s ===============================
+19:51.8410631Z 
+19:51.8451650Z ##[section]Async Command Start: Publish test results
+19:52.0595361Z Publishing test results to test run '78'
+19:52.0595576Z Test results remaining: 1. Test run id: 78
+19:52.4602572Z Published Test Run : https://tfsprodcus4.visualstudio.com/A063fc549-6266-4470-bb4e-a1ff093452fd/anaconda/_TestManagement/Runs?runId=78&_a=runCharts
+19:52.5051531Z ##[section]Async Command End: Publish test results
+19:52.5052778Z ##[section]Finishing: pytest
