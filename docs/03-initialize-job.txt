@@ -1,0 +1,11 @@
+18:51.1430319Z ##[section]Starting: Initialize job
+18:51.1430575Z Agent name: 'Hosted Agent'
+18:51.1430681Z Agent machine name: 'fv-az606'
+18:51.1430743Z Current agent version: '2.159.2'
+18:51.1454067Z Agent running as: 'vsts'
+18:51.1643652Z Prepare build directory.
+18:51.1899080Z Set build variables.
+18:51.1945275Z Download all required tasks.
+18:51.2109445Z Downloading task: Bash (3.159.3)
+18:51.7063317Z Start tracking orphan processes.
+18:51.7178349Z ##[section]Finishing: Initialize job

@@ -1,0 +1,133 @@
+2019-10-27T07:18:55.4773940Z ##[section]Starting: Show system info
+2019-10-27T07:18:55.4777257Z ==============================================================================
+2019-10-27T07:18:55.4777366Z Task         : Bash
+2019-10-27T07:18:55.4777433Z Description  : Run a Bash script on macOS, Linux, or Windows
+2019-10-27T07:18:55.4777514Z Version      : 3.159.3
+2019-10-27T07:18:55.4777573Z Author       : Microsoft Corporation
+2019-10-27T07:18:55.4777657Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2019-10-27T07:18:55.4777735Z ==============================================================================
+2019-10-27T07:18:57.5908766Z Generating script.
+2019-10-27T07:18:57.5938164Z ========================== Starting Command Output ===========================
+2019-10-27T07:18:57.5957633Z [command]/bin/bash --noprofile --norc /home/vsts/work/_temp/e54830cc-67cb-4f03-b24e-43ad92636405.sh
+2019-10-27T07:18:57.6200033Z cat /etc/os-release:  VERSION="16.04.6 LTS (Xenial Xerus)"
+2019-10-27T07:18:57.6281791Z whoami:  vsts
+2019-10-27T07:18:57.6291437Z which apt:  /usr/bin/apt
+2019-10-27T07:18:57.6302626Z which cargo:  /usr/share/rust/.cargo/bin/cargo
+2019-10-27T07:18:57.6312772Z which conda:  /usr/bin/conda
+2019-10-27T07:18:57.6325877Z which docker:  /usr/bin/docker
+2019-10-27T07:18:57.6337484Z which rustc:  /usr/share/rust/.cargo/bin/rustc
+2019-10-27T07:18:57.6349172Z which snap:  /usr/bin/snap
+2019-10-27T07:18:57.6358795Z which tree: 
+2019-10-27T07:18:57.6879144Z apt --version:  apt 1.2.32 (amd64)
+2019-10-27T07:18:58.8149198Z cargo --version:  cargo 1.38.0 (23ef9a4ef 2019-08-20)
+2019-10-27T07:19:01.0286379Z conda:  conda 4.7.10
+2019-10-27T07:19:04.1861507Z docker:  Docker version 3.0.6, build a63faebc
+2019-10-27T07:19:04.7560097Z rustc:  rustc 1.38.0 (625451e37 2019-09-23)
+2019-10-27T07:19:04.8618277Z snap --version:  snap 2.40 snapd 2.40 series 16 ubuntu 16.04 kernel 4.15.0-1059-azure
+2019-10-27T07:19:04.8619835Z CONDA:  /usr/share/miniconda
+2019-10-27T07:19:04.8622040Z HOME:  /home/vsts
+2019-10-27T07:19:04.8622619Z PATH:  /usr/share/rust/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+2019-10-27T07:19:04.8623273Z ls -al ~
+2019-10-27T07:19:04.8659034Z total 40
+2019-10-27T07:19:04.8659472Z drwxrwxrwx  7 vsts docker 4096 Oct 27 07:18 .
+2019-10-27T07:19:04.8660577Z drwxr-xr-x+ 5 root root   4096 Oct 24 16:00 ..
+2019-10-27T07:19:04.8660826Z drwxr-xr-x  7 vsts root   4096 Oct 24 16:01 agents
+2019-10-27T07:19:04.8661103Z -rwxrwxrwx  1 vsts docker  220 Oct 24 16:00 .bash_logout
+2019-10-27T07:19:04.8661327Z -rwxrwxrwx  1 vsts docker 3771 Oct 24 16:00 .bashrc
+2019-10-27T07:19:04.8661613Z lrwxrwxrwx  1 vsts docker   22 Oct 24 16:00 .cargo -> /usr/share/rust/.cargo
+2019-10-27T07:19:04.8661873Z drwxr-xr-x  2 vsts root   4096 Oct 24 16:02 factory
+2019-10-27T07:19:04.8662141Z drwxr-xr-x  2 vsts docker 4096 Oct 27 07:18 perflog
+2019-10-27T07:19:04.8662357Z -rwxrwxrwx  1 vsts docker  688 Oct 24 16:00 .profile
+2019-10-27T07:19:04.8662641Z lrwxrwxrwx  1 vsts docker   23 Oct 24 16:00 .rustup -> /usr/share/rust/.rustup
+2019-10-27T07:19:04.8662875Z drwxr-xr-x  2 vsts root   4096 Oct 24 16:01 warmup
+2019-10-27T07:19:04.8663128Z drwxr-xr-x  7 vsts root   4096 Oct 27 07:18 work
+2019-10-27T07:19:04.8663310Z ls -al ~/work:
+2019-10-27T07:19:04.8683429Z total 28
+2019-10-27T07:19:04.8683894Z drwxr-xr-x 7 vsts root   4096 Oct 27 07:18 .
+2019-10-27T07:19:04.8684025Z drwxrwxrwx 7 vsts docker 4096 Oct 27 07:18 ..
+2019-10-27T07:19:04.8684261Z drwxr-xr-x 6 vsts docker 4096 Oct 27 07:18 1
+2019-10-27T07:19:04.8684529Z drwxr-xr-x 3 vsts docker 4096 Oct 27 07:18 node_modules
+2019-10-27T07:19:04.8685123Z drwxr-xr-x 3 vsts docker 4096 Oct 27 07:18 SourceRootMapping
+2019-10-27T07:19:04.8686540Z drwxr-xr-x 3 vsts docker 4096 Oct 27 07:18 _tasks
+2019-10-27T07:19:04.8686806Z drwxr-xr-x 2 vsts docker 4096 Oct 27 07:18 _temp
+2019-10-27T07:19:04.8687075Z ls -al ~/work/1:
+2019-10-27T07:19:04.8725809Z total 24
+2019-10-27T07:19:04.8726628Z drwxr-xr-x 6 vsts docker 4096 Oct 27 07:18 .
+2019-10-27T07:19:04.8727930Z drwxr-xr-x 7 vsts root   4096 Oct 27 07:18 ..
+2019-10-27T07:19:04.8728510Z drwxr-xr-x 2 vsts docker 4096 Oct 27 07:18 a
+2019-10-27T07:19:04.8728932Z drwxr-xr-x 2 vsts docker 4096 Oct 27 07:18 b
+2019-10-27T07:19:04.8729546Z drwxr-xr-x 6 vsts docker 4096 Oct 27 07:18 s
+2019-10-27T07:19:04.8729774Z drwxr-xr-x 2 vsts docker 4096 Oct 27 07:18 TestResults
+2019-10-27T07:19:04.8730017Z ls -al ~/work/1/s:
+2019-10-27T07:19:04.8756313Z total 76
+2019-10-27T07:19:04.8758597Z drwxr-xr-x 6 vsts docker  4096 Oct 27 07:18 .
+2019-10-27T07:19:04.8761242Z drwxr-xr-x 6 vsts docker  4096 Oct 27 07:18 ..
+2019-10-27T07:19:04.8761845Z -rw-r--r-- 1 vsts docker  4519 Oct 27 07:18 azure-pipelines.yml
+2019-10-27T07:19:04.8762283Z drwxr-xr-x 2 vsts docker  4096 Oct 27 07:18 docs
+2019-10-27T07:19:04.8762739Z -rw-r--r-- 1 vsts docker   102 Oct 27 07:18 environment.yml
+2019-10-27T07:19:04.8763201Z drwxr-xr-x 8 vsts docker  4096 Oct 27 07:18 .git
+2019-10-27T07:19:04.8763966Z -rw-r--r-- 1 vsts docker    20 Oct 27 07:18 .gitignore
+2019-10-27T07:19:04.8764329Z -rw-r--r-- 1 vsts docker 18653 Oct 27 07:18 LICENSE
+2019-10-27T07:19:04.8764586Z -rw-r--r-- 1 vsts docker  1090 Oct 27 07:18 LICENSE-CODE
+2019-10-27T07:19:04.8765738Z -rw-r--r-- 1 vsts docker   371 Oct 27 07:18 .project
+2019-10-27T07:19:04.8766071Z -rw-r--r-- 1 vsts docker   423 Oct 27 07:18 .pydevproject
+2019-10-27T07:19:04.8766374Z -rw-r--r-- 1 vsts docker  2052 Oct 27 07:18 README.md
+2019-10-27T07:19:04.8766647Z drwxr-xr-x 2 vsts docker  4096 Oct 27 07:18 src
+2019-10-27T07:19:04.8766946Z drwxr-xr-x 2 vsts docker  4096 Oct 27 07:18 test
+2019-10-27T07:19:04.8767016Z PWD:  /home/vsts/work/1/s
+2019-10-27T07:19:04.8767273Z ls -al
+2019-10-27T07:19:04.8858561Z total 76
+2019-10-27T07:19:04.8859848Z drwxr-xr-x 6 vsts docker  4096 Oct 27 07:18 .
+2019-10-27T07:19:04.8860425Z drwxr-xr-x 6 vsts docker  4096 Oct 27 07:18 ..
+2019-10-27T07:19:04.8860954Z -rw-r--r-- 1 vsts docker  4519 Oct 27 07:18 azure-pipelines.yml
+2019-10-27T07:19:04.8861370Z drwxr-xr-x 2 vsts docker  4096 Oct 27 07:18 docs
+2019-10-27T07:19:04.8861740Z -rw-r--r-- 1 vsts docker   102 Oct 27 07:18 environment.yml
+2019-10-27T07:19:04.8862169Z drwxr-xr-x 8 vsts docker  4096 Oct 27 07:18 .git
+2019-10-27T07:19:04.8862519Z -rw-r--r-- 1 vsts docker    20 Oct 27 07:18 .gitignore
+2019-10-27T07:19:04.8862923Z -rw-r--r-- 1 vsts docker 18653 Oct 27 07:18 LICENSE
+2019-10-27T07:19:04.8863311Z -rw-r--r-- 1 vsts docker  1090 Oct 27 07:18 LICENSE-CODE
+2019-10-27T07:19:04.8863669Z -rw-r--r-- 1 vsts docker   371 Oct 27 07:18 .project
+2019-10-27T07:19:04.8864070Z -rw-r--r-- 1 vsts docker   423 Oct 27 07:18 .pydevproject
+2019-10-27T07:19:04.8864512Z -rw-r--r-- 1 vsts docker  2052 Oct 27 07:18 README.md
+2019-10-27T07:19:04.8865577Z drwxr-xr-x 2 vsts docker  4096 Oct 27 07:18 src
+2019-10-27T07:19:04.8866092Z drwxr-xr-x 2 vsts docker  4096 Oct 27 07:18 test
+2019-10-27T07:19:04.8866476Z ls -al /usr/share/rust/
+2019-10-27T07:19:04.8872657Z total 24
+2019-10-27T07:19:04.8872950Z drwxrwxrwx+   4 root root  4096 Sep 30 17:14 .
+2019-10-27T07:19:04.8873181Z drwxrwxrwx+ 317 root root 12288 Oct 27 07:18 ..
+2019-10-27T07:19:04.8873360Z drwxrwxrwx+   4 root root  4096 Sep 30 17:16 .cargo
+2019-10-27T07:19:04.8873565Z drwxrwxrwx+   6 root root  4096 Sep 30 17:15 .rustup
+2019-10-27T07:19:04.8879930Z ls -al /usr/share/rust/.cargo/bin
+2019-10-27T07:19:04.8941363Z total 149120
+2019-10-27T07:19:04.8942366Z drwxrwxrwx+  2 root root     4096 Sep 30 17:21 .
+2019-10-27T07:19:04.8942646Z drwxrwxrwx+  4 root root     4096 Sep 30 17:16 ..
+2019-10-27T07:19:04.8943252Z -rwxrwxrwx   1 root root  6989096 Sep 30 17:18 bindgen
+2019-10-27T07:19:04.8943945Z -rwxrwxrwx  12 root root 11401048 Sep 30 17:14 cargo
+2019-10-27T07:19:04.8944693Z -rwxrwxrwx  12 root root 11401048 Sep 30 17:14 cargo-clippy
+2019-10-27T07:19:04.8945406Z -rwxrwxrwx  12 root root 11401048 Sep 30 17:14 cargo-fmt
+2019-10-27T07:19:04.8945833Z -rwxrwxrwx  12 root root 11401048 Sep 30 17:14 cargo-miri
+2019-10-27T07:19:04.8946310Z -rwxrwxrwx   1 root root  8858744 Sep 30 17:21 cbindgen
+2019-10-27T07:19:04.8946777Z -rwxrwxrwx  12 root root 11401048 Sep 30 17:14 clippy-driver
+2019-10-27T07:19:04.8947387Z -rwxrwxrwx  12 root root 11401048 Sep 30 17:14 rls
+2019-10-27T07:19:04.8947851Z -rwxrwxrwx  12 root root 11401048 Sep 30 17:14 rustc
+2019-10-27T07:19:04.8948408Z -rwxrwxrwx  12 root root 11401048 Sep 30 17:14 rustdoc
+2019-10-27T07:19:04.8948862Z -rwxrwxrwx  12 root root 11401048 Sep 30 17:14 rustfmt
+2019-10-27T07:19:04.8949226Z -rwxrwxrwx  12 root root 11401048 Sep 30 17:14 rust-gdb
+2019-10-27T07:19:04.8949634Z -rwxrwxrwx  12 root root 11401048 Sep 30 17:14 rust-lldb
+2019-10-27T07:19:04.8949989Z -rwxrwxrwx  12 root root 11401048 Sep 30 17:14 rustup
+2019-10-27T07:19:04.9606652Z REPOSITORY                                           TAG                 IMAGE ID            CREATED             SIZE
+2019-10-27T07:19:04.9607127Z jekyll/builder                                       latest              9b1ce08d0926        3 weeks ago         560MB
+2019-10-27T07:19:04.9607463Z node                                                 10                  636ef87129d6        6 weeks ago         904MB
+2019-10-27T07:19:04.9607756Z node                                                 12                  d8c33ae35f44        6 weeks ago         907MB
+2019-10-27T07:19:04.9608835Z buildpack-deps                                       stretch             c2a4bffa2286        6 weeks ago         835MB
+2019-10-27T07:19:04.9609481Z debian                                               9                   cb15ecf641ad        6 weeks ago         101MB
+2019-10-27T07:19:04.9609838Z debian                                               8                   c9d6adb06e4d        6 weeks ago         129MB
+2019-10-27T07:19:04.9610575Z node                                                 12-alpine           ef7d474eab14        7 weeks ago         80.3MB
+2019-10-27T07:19:04.9610864Z alpine                                               3.10                961769676411        2 months ago        5.58MB
+2019-10-27T07:19:04.9611348Z node                                                 10-alpine           b95baba1cfdb        2 months ago        76.4MB
+2019-10-27T07:19:04.9611649Z alpine                                               3.9                 055936d39205        5 months ago        5.53MB
+2019-10-27T07:19:04.9611853Z alpine                                               3.7                 6d1ef012b567        7 months ago        4.21MB
+2019-10-27T07:19:04.9612094Z alpine                                               3.8                 dac705114996        7 months ago        4.41MB
+2019-10-27T07:19:04.9612717Z mcr.microsoft.com/azure-pipelines/node8-typescript   latest              9a948d360778        12 months ago       595MB
+2019-10-27T07:19:04.9655704Z 
+2019-10-27T07:19:04.9826411Z ##[section]Finishing: Show system info

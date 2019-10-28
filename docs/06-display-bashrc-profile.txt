@@ -1,0 +1,153 @@
+2019-10-27T07:19:04.9835434Z ##[section]Starting: Display .bashrc .profile
+2019-10-27T07:19:04.9839093Z ==============================================================================
+2019-10-27T07:19:04.9839186Z Task         : Bash
+2019-10-27T07:19:04.9839291Z Description  : Run a Bash script on macOS, Linux, or Windows
+2019-10-27T07:19:04.9839530Z Version      : 3.159.3
+2019-10-27T07:19:04.9839629Z Author       : Microsoft Corporation
+2019-10-27T07:19:04.9839700Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2019-10-27T07:19:04.9839819Z ==============================================================================
+2019-10-27T07:19:05.1197220Z Generating script.
+2019-10-27T07:19:05.1226859Z ========================== Starting Command Output ===========================
+2019-10-27T07:19:05.1246561Z [command]/bin/bash --noprofile --norc /home/vsts/work/_temp/fc7c19e0-cf76-4782-b6df-877b6c01a958.sh
+2019-10-27T07:19:05.1331788Z cat ~/.bashrc
+2019-10-27T07:19:05.1511410Z # ~/.bashrc: executed by bash(1) for non-login shells.
+2019-10-27T07:19:05.1513249Z # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+2019-10-27T07:19:05.1513537Z # for examples
+2019-10-27T07:19:05.1513698Z 
+2019-10-27T07:19:05.1515305Z # If not running interactively, don't do anything
+2019-10-27T07:19:05.1515802Z case $- in
+2019-10-27T07:19:05.1516003Z     *i*) ;;
+2019-10-27T07:19:05.1516170Z       *) return;;
+2019-10-27T07:19:05.1516324Z esac
+2019-10-27T07:19:05.1516448Z 
+2019-10-27T07:19:05.1516846Z # don't put duplicate lines or lines starting with space in the history.
+2019-10-27T07:19:05.1517057Z # See bash(1) for more options
+2019-10-27T07:19:05.1517227Z HISTCONTROL=ignoreboth
+2019-10-27T07:19:05.1517354Z 
+2019-10-27T07:19:05.1517722Z # append to the history file, don't overwrite it
+2019-10-27T07:19:05.1518089Z shopt -s histappend
+2019-10-27T07:19:05.1518261Z 
+2019-10-27T07:19:05.1518449Z # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+2019-10-27T07:19:05.1518621Z HISTSIZE=1000
+2019-10-27T07:19:05.1518949Z HISTFILESIZE=2000
+2019-10-27T07:19:05.1519078Z 
+2019-10-27T07:19:05.1519385Z # check the window size after each command and, if necessary,
+2019-10-27T07:19:05.1519546Z # update the values of LINES and COLUMNS.
+2019-10-27T07:19:05.1519868Z shopt -s checkwinsize
+2019-10-27T07:19:05.1520021Z 
+2019-10-27T07:19:05.1520182Z # If set, the pattern "**" used in a pathname expansion context will
+2019-10-27T07:19:05.1520497Z # match all files and zero or more directories and subdirectories.
+2019-10-27T07:19:05.1520811Z #shopt -s globstar
+2019-10-27T07:19:05.1520961Z 
+2019-10-27T07:19:05.1521317Z # make less more friendly for non-text input files, see lesspipe(1)
+2019-10-27T07:19:05.1521694Z [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+2019-10-27T07:19:05.1521864Z 
+2019-10-27T07:19:05.1522016Z # set variable identifying the chroot you work in (used in the prompt below)
+2019-10-27T07:19:05.1522699Z if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+2019-10-27T07:19:05.1522885Z     debian_chroot=$(cat /etc/debian_chroot)
+2019-10-27T07:19:05.1523028Z fi
+2019-10-27T07:19:05.1523133Z 
+2019-10-27T07:19:05.1523804Z # set a fancy prompt (non-color, unless we know we "want" color)
+2019-10-27T07:19:05.1523979Z case "$TERM" in
+2019-10-27T07:19:05.1524294Z     xterm-color|*-256color) color_prompt=yes;;
+2019-10-27T07:19:05.1524459Z esac
+2019-10-27T07:19:05.1524749Z 
+2019-10-27T07:19:05.1525073Z # uncomment for a colored prompt, if the terminal has the capability; turned
+2019-10-27T07:19:05.1525963Z # off by default to not distract the user: the focus in a terminal window
+2019-10-27T07:19:05.1526144Z # should be on the output of commands, not on the prompt
+2019-10-27T07:19:05.1526313Z #force_color_prompt=yes
+2019-10-27T07:19:05.1526438Z 
+2019-10-27T07:19:05.1526832Z if [ -n "$force_color_prompt" ]; then
+2019-10-27T07:19:05.1527563Z     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+2019-10-27T07:19:05.1530735Z 	# We have color support; assume it's compliant with Ecma-48
+2019-10-27T07:19:05.1531640Z 	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+2019-10-27T07:19:05.1540562Z 	# a case would tend to support setf rather than setaf.)
+2019-10-27T07:19:05.1540865Z 	color_prompt=yes
+2019-10-27T07:19:05.1541054Z     else
+2019-10-27T07:19:05.1541373Z 	color_prompt=
+2019-10-27T07:19:05.1541529Z     fi
+2019-10-27T07:19:05.1541670Z fi
+2019-10-27T07:19:05.1541795Z 
+2019-10-27T07:19:05.1541940Z if [ "$color_prompt" = yes ]; then
+2019-10-27T07:19:05.1542815Z     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+2019-10-27T07:19:05.1543062Z else
+2019-10-27T07:19:05.1543467Z     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+2019-10-27T07:19:05.1544151Z fi
+2019-10-27T07:19:05.1544370Z unset color_prompt force_color_prompt
+2019-10-27T07:19:05.1544825Z 
+2019-10-27T07:19:05.1544991Z # If this is an xterm set the title to user@host:dir
+2019-10-27T07:19:05.1545679Z case "$TERM" in
+2019-10-27T07:19:05.1545848Z xterm*|rxvt*)
+2019-10-27T07:19:05.1546322Z     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+2019-10-27T07:19:05.1546530Z     ;;
+2019-10-27T07:19:05.1546674Z *)
+2019-10-27T07:19:05.1546825Z     ;;
+2019-10-27T07:19:05.1546968Z esac
+2019-10-27T07:19:05.1547098Z 
+2019-10-27T07:19:05.1547253Z # enable color support of ls and also add handy aliases
+2019-10-27T07:19:05.1547700Z if [ -x /usr/bin/dircolors ]; then
+2019-10-27T07:19:05.1548152Z     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+2019-10-27T07:19:05.1548550Z     alias ls='ls --color=auto'
+2019-10-27T07:19:05.1548920Z     #alias dir='dir --color=auto'
+2019-10-27T07:19:05.1549646Z     #alias vdir='vdir --color=auto'
+2019-10-27T07:19:05.1550453Z 
+2019-10-27T07:19:05.1550782Z     alias grep='grep --color=auto'
+2019-10-27T07:19:05.1551009Z     alias fgrep='fgrep --color=auto'
+2019-10-27T07:19:05.1551256Z     alias egrep='egrep --color=auto'
+2019-10-27T07:19:05.1551321Z fi
+2019-10-27T07:19:05.1551355Z 
+2019-10-27T07:19:05.1551428Z # colored GCC warnings and errors
+2019-10-27T07:19:05.1551722Z #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+2019-10-27T07:19:05.1551787Z 
+2019-10-27T07:19:05.1551844Z # some more ls aliases
+2019-10-27T07:19:05.1552055Z alias ll='ls -alF'
+2019-10-27T07:19:05.1552258Z alias la='ls -A'
+2019-10-27T07:19:05.1552461Z alias l='ls -CF'
+2019-10-27T07:19:05.1552500Z 
+2019-10-27T07:19:05.1552564Z # Add an "alert" alias for long running commands.  Use like so:
+2019-10-27T07:19:05.1552642Z #   sleep 10; alert
+2019-10-27T07:19:05.1553006Z alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+2019-10-27T07:19:05.1553094Z 
+2019-10-27T07:19:05.1553154Z # Alias definitions.
+2019-10-27T07:19:05.1553229Z # You may want to put all your additions into a separate file like
+2019-10-27T07:19:05.1553315Z # ~/.bash_aliases, instead of adding them here directly.
+2019-10-27T07:19:05.1553958Z # See /usr/share/doc/bash-doc/examples in the bash-doc package.
+2019-10-27T07:19:05.1554008Z 
+2019-10-27T07:19:05.1554217Z if [ -f ~/.bash_aliases ]; then
+2019-10-27T07:19:05.1554289Z     . ~/.bash_aliases
+2019-10-27T07:19:05.1554347Z fi
+2019-10-27T07:19:05.1554388Z 
+2019-10-27T07:19:05.1554993Z # enable programmable completion features (you don't need to enable
+2019-10-27T07:19:05.1555318Z # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+2019-10-27T07:19:05.1555393Z # sources /etc/bash.bashrc).
+2019-10-27T07:19:05.1555611Z if ! shopt -oq posix; then
+2019-10-27T07:19:05.1555861Z   if [ -f /usr/share/bash-completion/bash_completion ]; then
+2019-10-27T07:19:05.1556104Z     . /usr/share/bash-completion/bash_completion
+2019-10-27T07:19:05.1556343Z   elif [ -f /etc/bash_completion ]; then
+2019-10-27T07:19:05.1556410Z     . /etc/bash_completion
+2019-10-27T07:19:05.1556488Z   fi
+2019-10-27T07:19:05.1556544Z fi
+2019-10-27T07:19:05.1556606Z cat ~/.profile
+2019-10-27T07:19:05.1557146Z # ~/.profile: executed by the command interpreter for login shells.
+2019-10-27T07:19:05.1557236Z # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+2019-10-27T07:19:05.1557304Z # exists.
+2019-10-27T07:19:05.1557630Z # see /usr/share/doc/bash/examples/startup-files for examples.
+2019-10-27T07:19:05.1557877Z # the files are located in the bash-doc package.
+2019-10-27T07:19:05.1557930Z 
+2019-10-27T07:19:05.1557994Z # the default umask is set in /etc/profile; for setting the umask
+2019-10-27T07:19:05.1558260Z # for ssh logins, install and configure the libpam-umask package.
+2019-10-27T07:19:05.1558332Z #umask 022
+2019-10-27T07:19:05.1558366Z 
+2019-10-27T07:19:05.1558429Z # if running bash
+2019-10-27T07:19:05.1558713Z if [ -n "$BASH_VERSION" ]; then
+2019-10-27T07:19:05.1558781Z     # include .bashrc if it exists
+2019-10-27T07:19:05.1559010Z     if [ -f "$HOME/.bashrc" ]; then
+2019-10-27T07:19:05.1559175Z 	. "$HOME/.bashrc"
+2019-10-27T07:19:05.1559242Z     fi
+2019-10-27T07:19:05.1559296Z fi
+2019-10-27T07:19:05.1559338Z 
+2019-10-27T07:19:05.1559701Z # set PATH so it includes user's private bin directories
+2019-10-27T07:19:05.1559774Z PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+2019-10-27T07:19:05.1559845Z PATH="$HOME/.dotnet/tools:$PATH"
+2019-10-27T07:19:05.1560606Z 
+2019-10-27T07:19:05.1622776Z ##[section]Finishing: Display .bashrc .profile

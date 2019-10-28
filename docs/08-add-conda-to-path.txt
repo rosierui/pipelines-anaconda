@@ -1,0 +1,17 @@
+2019-10-27T07:19:05.3269213Z ##[section]Starting: Add conda to PATH
+2019-10-27T07:19:05.3271834Z ==============================================================================
+2019-10-27T07:19:05.3271951Z Task         : Bash
+2019-10-27T07:19:05.3272006Z Description  : Run a Bash script on macOS, Linux, or Windows
+2019-10-27T07:19:05.3272103Z Version      : 3.159.3
+2019-10-27T07:19:05.3272152Z Author       : Microsoft Corporation
+2019-10-27T07:19:05.3272246Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2019-10-27T07:19:05.3272312Z ==============================================================================
+2019-10-27T07:19:05.4599941Z Generating script.
+2019-10-27T07:19:05.4636869Z ========================== Starting Command Output ===========================
+2019-10-27T07:19:05.4657394Z [command]/bin/bash --noprofile --norc /home/vsts/work/_temp/2f658380-1264-4321-bd10-abd1a251622d.sh
+2019-10-27T07:19:05.4757112Z 1-PATH: /usr/share/rust/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+2019-10-27T07:19:05.4757901Z 2-PYTHONPATH: 
+2019-10-27T07:19:05.4767844Z 3-PATH: /usr/share/rust/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+2019-10-27T07:19:05.4768679Z 4-PYTHONPATH: 
+2019-10-27T07:19:05.4768995Z 
+2019-10-27T07:19:05.4818397Z ##[section]Finishing: Add conda to PATH

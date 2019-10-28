@@ -1,0 +1,36 @@
+17:40.7477409Z ##[section]Starting: Prepare job Job1
+17:40.7577477Z ContinueOnError: False
+17:40.7577477Z TimeoutInMinutes: 60
+17:40.7577477Z CancelTimeoutInMinutes: 5
+17:40.7577477Z Expand:
+17:40.7577477Z   Matrix: 
+{
+  "Python36": {
+    "python.version": "3.6"
+  }
+}
+17:40.8127399Z   ########## System Pipeline Decorator(s) ##########
+
+17:40.8127399Z   Begin evaluating template 'system-pre-steps.yml'
+Evaluating: eq('true', variables['system.debugContext'])
+Expanded: eq('true', Null)
+Result: False
+Evaluating: resources['repositories']['self']
+Expanded: Object
+Result: True
+Evaluating: not(containsValue(job['steps']['*']['task']['id'], '6d15af64-176c-496d-b583-fd2ae21d4df4'))
+Expanded: not(containsValue(Object, '6d15af64-176c-496d-b583-fd2ae21d4df4'))
+Result: True
+Evaluating: resources['repositories']['self']['checkoutOptions']
+Result: Object
+Finished evaluating template 'system-pre-steps.yml'
+********************************************************************************
+Template and static variable resolution complete. Final runtime YAML document:
+steps:
+- task: 6d15af64-176c-496d-b583-fd2ae21d4df4@1
+  inputs:
+    repository: self
+
+
+17:40.8127399Z   MaxConcurrency: 0
+17:40.8177069Z ##[section]Finishing: Prepare job Job1

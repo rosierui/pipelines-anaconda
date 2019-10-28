@@ -1,0 +1,103 @@
+18:51.7720423Z ##[section]Starting: Checkout
+18:51.7994762Z ==============================================================================
+18:51.7995516Z Task         : Get sources
+18:51.7995627Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+18:51.7995749Z Version      : 1.0.0
+18:51.7995808Z Author       : Microsoft
+18:51.7995894Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+18:51.7995969Z ==============================================================================
+18:52.5520139Z Syncing repository: rosierui/pipelines-anaconda (GitHub)
+18:53.5358608Z ##[command]git version
+18:53.6470583Z git version 2.23.0
+18:53.6653298Z ##[command]git lfs version
+18:54.4804278Z git-lfs/2.8.0 (GitHub; linux amd64; go 1.12.6)
+18:54.5151784Z ##[command]git init "/home/vsts/work/1/s"
+18:54.5641033Z Initialized empty Git repository in /home/vsts/work/1/s/.git/
+18:54.5684382Z ##[command]git remote add origin https://github.com/rosierui/pipelines-anaconda
+18:54.5919709Z ##[command]git config gc.auto 0
+18:54.5987086Z ##[command]git config --get-all http.https://github.com/rosierui/pipelines-anaconda.extraheader
+18:54.6042980Z ##[command]git config --get-all http.proxy
+18:54.6182580Z ##[command]git -c http.extraheader="AUTHORIZATION: basic ***" fetch --force --tags --prune --progress --no-recurse-submodules origin
+18:55.2874315Z remote: Enumerating objects: 32, done.        
+18:55.2875728Z remote: Counting objects:   3% (1/32)        
+18:55.2881284Z remote: Counting objects:   6% (2/32)        
+18:55.2882108Z remote: Counting objects:   9% (3/32)        
+18:55.2882417Z remote: Counting objects:  12% (4/32)        
+18:55.2882567Z remote: Counting objects:  15% (5/32)        
+18:55.2882665Z remote: Counting objects:  18% (6/32)        
+18:55.2882721Z remote: Counting objects:  21% (7/32)        
+18:55.2882775Z remote: Counting objects:  25% (8/32)        
+18:55.2882872Z remote: Counting objects:  28% (9/32)        
+18:55.2882942Z remote: Counting objects:  31% (10/32)        
+18:55.2883038Z remote: Counting objects:  34% (11/32)        
+18:55.2883092Z remote: Counting objects:  37% (12/32)        
+18:55.2883185Z remote: Counting objects:  40% (13/32)        
+18:55.2883240Z remote: Counting objects:  43% (14/32)        
+18:55.2883342Z remote: Counting objects:  46% (15/32)        
+18:55.2883799Z remote: Counting objects:  50% (16/32)        
+18:55.2885546Z remote: Counting objects:  53% (17/32)        
+18:55.2887369Z remote: Counting objects:  56% (18/32)        
+18:55.2887660Z remote: Counting objects:  59% (19/32)        
+18:55.2887781Z remote: Counting objects:  62% (20/32)        
+18:55.2887906Z remote: Counting objects:  65% (21/32)        
+18:55.2887972Z remote: Counting objects:  68% (22/32)        
+18:55.2888375Z remote: Counting objects:  71% (23/32)        
+18:55.2888443Z remote: Counting objects:  75% (24/32)        
+18:55.2888546Z remote: Counting objects:  78% (25/32)        
+18:55.2888771Z remote: Counting objects:  81% (26/32)        
+18:55.2888826Z remote: Counting objects:  84% (27/32)        
+18:55.2888917Z remote: Counting objects:  87% (28/32)        
+18:55.2888971Z remote: Counting objects:  90% (29/32)        
+18:55.2889063Z remote: Counting objects:  93% (30/32)        
+18:55.2889118Z remote: Counting objects:  96% (31/32)        
+18:55.2889210Z remote: Counting objects: 100% (32/32)        
+18:55.2889945Z remote: Counting objects: 100% (32/32), done.        
+18:55.2890056Z remote: Compressing objects:   4% (1/25)        
+18:55.2890115Z remote: Compressing objects:   8% (2/25)        
+18:55.2890221Z remote: Compressing objects:  12% (3/25)        
+18:55.2896534Z remote: Compressing objects:  16% (4/25)        
+18:55.2896941Z remote: Compressing objects:  20% (5/25)        
+18:55.2897486Z remote: Compressing objects:  24% (6/25)        
+18:55.2897733Z remote: Compressing objects:  28% (7/25)        
+18:55.2898011Z remote: Compressing objects:  32% (8/25)        
+18:55.2898623Z remote: Compressing objects:  36% (9/25)        
+18:55.2899044Z remote: Compressing objects:  40% (10/25)        
+18:55.2900838Z remote: Compressing objects:  44% (11/25)        
+18:55.2902340Z remote: Compressing objects:  48% (12/25)        
+18:55.2902978Z remote: Compressing objects:  52% (13/25)        
+18:55.2903320Z remote: Compressing objects:  56% (14/25)        
+18:55.2903472Z remote: Compressing objects:  60% (15/25)        
+18:55.2903665Z remote: Compressing objects:  64% (16/25)        
+18:55.2903802Z remote: Compressing objects:  68% (17/25)        
+18:55.2903974Z remote: Compressing objects:  72% (18/25)        
+18:55.2904132Z remote: Compressing objects:  76% (19/25)        
+18:55.2907775Z remote: Compressing objects:  80% (20/25)        
+18:55.2909529Z remote: Compressing objects:  84% (21/25)        
+18:55.2910589Z remote: Compressing objects:  88% (22/25)        
+18:55.2910664Z remote: Compressing objects:  92% (23/25)        
+18:55.2910766Z remote: Compressing objects:  96% (24/25)        
+18:55.2910979Z remote: Compressing objects: 100% (25/25)        
+18:55.2911124Z remote: Compressing objects: 100% (25/25), done.        
+18:55.2956147Z remote: Total 62 (delta 16), reused 23 (delta 7), pack-reused 30        
+18:55.3541535Z From https://github.com/rosierui/pipelines-anaconda
+18:55.3542643Z  * [new branch]      master     -> origin/master
+18:55.4680355Z ##[command]git checkout --progress --force eb530e3d7939d817027a1b154554e4a9d7fd584f
+18:55.4681965Z Note: switching to 'eb530e3d7939d817027a1b154554e4a9d7fd584f'.
+18:55.4682029Z 
+18:55.4682243Z You are in 'detached HEAD' state. You can look around, make experimental
+18:55.4682312Z changes and commit them, and you can discard any commits you make in this
+18:55.4682384Z state without impacting any branches by switching back to a branch.
+18:55.4682421Z 
+18:55.4682659Z If you want to create a new branch to retain commits you create, you may
+18:55.4682908Z do so (now or later) by using -c with the switch command. Example:
+18:55.4682948Z 
+18:55.4683325Z   git switch -c <new-branch-name>
+18:55.4683365Z 
+18:55.4683415Z Or undo this operation with:
+18:55.4684713Z 
+18:55.4685551Z   git switch -
+18:55.4685605Z 
+18:55.4685689Z Turn off this advice by setting config variable advice.detachedHead to false
+18:55.4685807Z 
+18:55.4685877Z HEAD is now at eb530e3 TestResults/
+18:55.4754768Z ##[section]Finishing: Checkout

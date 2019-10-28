@@ -1,0 +1,10 @@
+2019-10-27T07:19:52.6732696Z ##[section]Starting: Checkout
+2019-10-27T07:19:52.6734223Z ==============================================================================
+2019-10-27T07:19:52.6734347Z Task         : Get sources
+2019-10-27T07:19:52.6734407Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2019-10-27T07:19:52.6734501Z Version      : 1.0.0
+2019-10-27T07:19:52.6734550Z Author       : Microsoft
+2019-10-27T07:19:52.6734641Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2019-10-27T07:19:52.6734706Z ==============================================================================
+2019-10-27T07:19:53.1247889Z Cleaning any cached credential from repository: rosierui/pipelines-anaconda (GitHub)
+2019-10-27T07:19:53.1294717Z ##[section]Finishing: Checkout

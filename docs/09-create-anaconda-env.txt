@@ -1,0 +1,27 @@
+2019-10-27T07:19:05.4827699Z ##[section]Starting: Create Anaconda environment
+2019-10-27T07:19:05.4830654Z ==============================================================================
+2019-10-27T07:19:05.4830786Z Task         : Bash
+2019-10-27T07:19:05.4830848Z Description  : Run a Bash script on macOS, Linux, or Windows
+2019-10-27T07:19:05.4831080Z Version      : 3.159.3
+2019-10-27T07:19:05.4831137Z Author       : Microsoft Corporation
+2019-10-27T07:19:05.4831240Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2019-10-27T07:19:05.4831316Z ==============================================================================
+2019-10-27T07:19:05.6177634Z Generating script.
+2019-10-27T07:19:05.6189946Z Script contents:
+2019-10-27T07:19:05.6191162Z conda create --yes --quiet --name my_env
+2019-10-27T07:19:05.6207319Z ========================== Starting Command Output ===========================
+2019-10-27T07:19:05.6229132Z [command]/bin/bash --noprofile --norc /home/vsts/work/_temp/60f15213-4276-4334-b8e6-dc2963c4cdfc.sh
+2019-10-27T07:19:08.5304037Z Collecting package metadata (current_repodata.json): ...working... done
+2019-10-27T07:19:08.5315531Z Solving environment: ...working... done
+2019-10-27T07:19:08.5321858Z 
+2019-10-27T07:19:08.5322050Z ## Package Plan ##
+2019-10-27T07:19:08.5322195Z 
+2019-10-27T07:19:08.5322508Z   environment location: /usr/share/miniconda/envs/my_env
+2019-10-27T07:19:08.5322723Z 
+2019-10-27T07:19:08.5322846Z 
+2019-10-27T07:19:08.5323042Z 
+2019-10-27T07:19:08.5423212Z Preparing transaction: ...working... done
+2019-10-27T07:19:08.6432419Z Verifying transaction: ...working... done
+2019-10-27T07:19:08.6441464Z Executing transaction: ...working... done
+2019-10-27T07:19:08.6911155Z 
+2019-10-27T07:19:08.6963882Z ##[section]Finishing: Create Anaconda environment
