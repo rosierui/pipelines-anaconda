@@ -1,0 +1,173 @@
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/anaconda?view=azure-devops&tabs=ubuntu-16-04
+# commnet CTRL + 7 
+
+# trigger:
+# - master
+# - dev/*
+
+jobs:
+- job:
+  displayName: ubuntu-16.04
+  pool:
+    vmImage: 'ubuntu-16.04'
+    #vmImage: 'ubuntu-latest'
+  strategy:
+    matrix:
+      #Python27:
+      #  python.version: '2.7'
+      #Python36:
+      #python.version: '3.6'
+      Python37:
+        python.version: '3.7'
+
+  steps:
+  - task: UsePythonVersion@0
+    inputs:
+        versionSpec: '$(python.version)'
+
+    displayName: 'use Python $(python.version)'
+        
+  - bash: |
+      echo "cat /etc/os-release: " $(cat /etc/os-release | grep "VERSION=")
+      echo "whoami: " `whoami`     
+      echo "which apt: " $(which apt)      
+      echo "which cargo: " $(which cargo)      
+      echo "which conda: " $(which conda)      
+      echo "which docker: " $(which docker)      
+      echo "which rustc: " $(which rustc)      
+      echo "which snap: " $(which snap)      
+      echo "which tree: " $(which tree)      
+
+      echo "apt --version: " $(apt --version)      
+      echo "cargo --version: " $(cargo --version)      
+      echo "conda: " $(conda --version)      
+      echo "docker: " $(docker --version)
+      echo "git: " $(git --version)
+      echo "rustc: " $(rustc --version)      
+      echo "snap --version: " $(snap --version)      
+
+      echo "CONDA: " $CONDA
+      echo "HOME: " $HOME
+      echo "PATH: " $PATH
+      echo "ls -al ~"
+      ls -al ~
+
+      echo "ls -al ~/work:"
+      ls -al ~/work
+
+      echo "ls -al ~/work/1:"
+      ls -al ~/work/1
+
+      echo "ls -al ~/work/1/s:"
+      ls -al ~/work/1/s
+
+      echo "PWD: " $PWD
+      echo "ls -al"     
+      ls -al
+
+      echo "ls -al /usr/share/rust/"
+      ls -al /usr/share/rust/
+
+      echo "ls -al /usr/share/rust/.cargo/bin"
+      ls -al /usr/share/rust/.cargo/bin
+
+      #echo "ls -al /snap/bin"
+      #ls -al /snap/bin # ls: cannot access '/snap/bin': No such file or directory
+
+      docker images
+      
+    displayName: Show system info
+
+  - bash: |
+      # https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml
+      # echo "Agent.BuildDirectory: " ${Agent.BuildDirectory} # bad substitution
+      # echo "Build.ArtifactStagingDirectory: " ${Build.ArtifactStagingDirectory} # bad substitution
+      echo "cat ~/.bashrc"
+      cat ~/.bashrc
+
+      echo "cat ~/.profile"
+      cat ~/.profile
+    displayName: Display .bashrc .profile
+
+  # https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml
+  # https://mohitgoyal.co/2019/06/23/print-all-environment-variables-in-azure-devops-across-microsoft-hosted-agents/
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: 'env | sort'
+    
+    displayName: env | sort
+
+  - bash: |
+      echo "1-PATH: $PATH"
+      echo "2-PYTHONPATH: $PYTHONPATH"
+
+      echo "##vso[task.prependpath]$CONDA/bin"
+
+      echo "3-PATH: $PATH"
+      echo "4-PYTHONPATH: $PYTHONPATH"
+    displayName: Add conda to PATH
+
+  - bash: conda create --yes --quiet --name my_env
+    displayName: Create Anaconda environment
+
+  - bash: |
+      conda env list
+      echo "source activate my_env"
+      source activate my_env
+      conda env list
+      conda install --yes --quiet --name my_env python=$PYTHON_VERSION numpy
+    displayName: Install Anaconda packages
+
+  - bash: |
+      conda env list
+      echo "source activate my_env"
+      source activate my_env
+      conda env list
+      pip install pytest pytest-azurepipelines
+      pytest
+    displayName: pytest
+
+  - script: |
+      unset PYTHONPATH
+      # https://hub.docker.com/r/continuumio/anaconda3
+      docker pull continuumio/anaconda3
+      docker run -i -t continuumio/anaconda3 /bin/bash
+      
+
+      echo "which conda"
+      source activate base
+      conda evn list
+      echo "conda list | wc"
+      conda list | wc
+
+      echo "conda install additional packages"
+      conda install -y graphviz
+      conda install -y python-graphviz
+      conda install -y pyyaml # docker-anaconda3 has this
+      
+      echo "pip install additional packages"
+      pip install onnx
+      pip install pyvcd
+      pip install protobuf
+      pip install torch
+      
+      echo "conda list | wc"
+      conda list | wc
+
+    condition: succeeded()
+    diaplayName: "Create conda env from anaconda3 distribution"           
+
+  - bash: |
+      export PATH=$HOME/anaconda3/bin:$PATH
+      source activate base      
+      pip install pytest-azurepipelines
+      
+      PRJ_HOME=$HOME/work/1/s
+      TEST_RESULTS_DIR=$HOME/work/1/TestResults
+
+      export PYTHONPATH=$PRJ_HOME/py_libs:$PYTHONPATH
+      cd $PRJ_HOME/py_libs/test
+      pytest
+      
+    displayName: Run tests
