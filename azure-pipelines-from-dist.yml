@@ -128,38 +128,46 @@ jobs:
       pytest
     displayName: pytest
 
+  - script: |
+      unset PYTHONPATH
+      wget https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh -O ~/anaconda3.sh
+      bash ~/anaconda3.sh -b -p $HOME/anaconda3
+      export PATH=$HOME/anaconda3/bin:$PATH
+      rm ~/anaconda3.sh
+
+      echo "which conda"
+      source activate base
+      conda evn list
+      echo "conda list | wc"
+      conda list | wc
+
+      echo "conda install additional packages"
+      conda install -y graphviz
+      conda install -y python-graphviz
+      conda install -y pyyaml # docker-anaconda3 has this
+      
+      echo "pip install additional packages"
+      pip install onnx
+      pip install pyvcd
+      pip install protobuf
+      pip install torch
+      
+      echo "conda list | wc"
+      conda list | wc
+
+    condition: succeeded()
+    diaplayName: "Create conda env from anaconda3 distribution"           
+
   - bash: |
-      # https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml
-      # echo "Agent.BuildDirectory: " ${Agent.BuildDirectory} # bad substitution
-      # echo "Build.ArtifactStagingDirectory: " ${Build.ArtifactStagingDirectory} # bad substitution
-      echo "cat ~/.bashrc"
-      cat ~/.bashrc
-
-      echo "cat ~/.profile"
-      cat ~/.profile
+      export PATH=$HOME/anaconda3/bin:$PATH
+      source activate base      
+      pip install pytest-azurepipelines
       
-      echo "dummy data" > $COMMON_TESTRESULTSDIRECTORY/my_test_data.txt
-      echo "ls -al $COMMON_TESTRESULTSDIRECTORY"
-      ls -al $COMMON_TESTRESULTSDIRECTORY
-      
-      echo 'cat $COMMON_TESTRESULTSDIRECTORY/my_test_data.txt'
-      cat $COMMON_TESTRESULTSDIRECTORY/my_test_data.txt
-    displayName: Display .bashrc .profile again
+      PRJ_HOME=$HOME/work/1/s
+      TEST_RESULTS_DIR=$HOME/work/1/TestResults
 
-# - job:
-#   displayName: From environment.yml
-#   pool:
-#     vmImage: 'ubuntu-16.04'
-# 
-#   steps:
-#   - bash: echo "##vso[task.prependpath]$CONDA/bin"
-#     displayName: Add conda to PATH
-# 
-#   - script: conda env create --quiet --file environment.yml
-#     displayName: Create Anaconda environment
-# 
-#   - bash: |
-#       source activate env-from-yaml
-#       pip install pytest pytest-azurepipelines
-#       pytest
-#     displayName: pytest
+      export PYTHONPATH=$PRJ_HOME/py_libs:$PYTHONPATH
+      cd $PRJ_HOME/py_libs/test
+      pytest
+      
+    displayName: Run tests
